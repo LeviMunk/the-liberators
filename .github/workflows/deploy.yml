@@ -29,5 +29,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      # Pages artifact metadata can lag the upload; allow GitHub time to index it.
+      - name: Let GitHub register the uploaded Pages artifact
+        run: sleep 15
       - uses: actions/deploy-pages@v4
         id: deployment
