@@ -18,6 +18,34 @@
 @media(max-width:900px){.site-header{height:78px}.menu-toggle{display:block;margin-left:auto}.site-nav{display:none;position:absolute;z-index:30;top:78px;left:0;right:0;background:#101721;border-bottom:1px solid var(--border);padding:15px 34px 25px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 25px 35px rgba(0,0,0,.4)}.site-nav.open{display:flex}.site-nav a{padding:13px 0;font-size:13px}.site-nav a.active:after{display:none}.hero{min-height:650px}.hero-content{padding-top:106px}.hero-art{right:-100px;opacity:.6;width:100%}.hero h1{font-size:clamp(60px,10vw,90px)}.home-panels{grid-template-columns:1fr}.feature-panel{min-height:220px}.character-grid{grid-template-columns:repeat(2,1fr)}.character-card{height:440px}.codex-grid{grid-template-columns:repeat(2,1fr)}.ledger-intro{grid-template-columns:1fr}.ledger-layout{grid-template-columns:1fr}.stat-trio{max-width:580px}}
 @media(max-width:600px){.shell{padding-left:18px;padding-right:18px}.brand{min-width:0}.brand strong{font-size:12px}.brand small{font-size:7px}.brand img{width:37px}.hero{margin-top:12px;min-height:640px}.hero-content{padding:101px 20px 138px}.hero-art{right:-210px;top:-50px;width:165%;height:750px;opacity:.37}.hero:before{background:linear-gradient(90deg,#101622 4%,rgba(16,22,34,.5))}.hero h1{font-size:clamp(48px,12vw,69px)}.eyebrow{font-size:8px;letter-spacing:.18em;gap:5px}.eyebrow .line{width:14px}.overline{font-size:8px;margin-top:51px}.hero-tagline{font-size:19px}.hero-actions{flex-direction:column;max-width:245px}.hero-actions .button{width:100%}.hero-bottom{padding:16px 12px;gap:8px}.hero-bottom>div{min-width:0;flex:1}.hero-bottom-middle{display:none}.hero-bottom small{font-size:7px;letter-spacing:.1em}.hero-bottom strong{font-size:10px}.section-header{display:block;margin:64px 0 28px}.section-header h2{font-size:31px;margin-bottom:18px}.section-lead{font-size:12px;line-height:1.75}.feature-panel{padding:23px}.wish-panel blockquote{font-size:16px}.event-inner{gap:12px}.event-roman{font-size:68px}.event-inner h3{font-size:13px}.event-inner p{font-size:11px}.date-box{padding-left:13px}.date-box strong{font-size:30px}.date-box small{font-size:7px}.home-endnote{font-size:8px;letter-spacing:.08em}.page-banner{padding:68px 0 45px;margin-bottom:28px}.page-banner h1{font-size:44px}.page-banner p:last-child{font-size:12px}.character-grid{grid-template-columns:1fr 1fr;gap:10px}.character-card{height:340px}.card-sigil{inset:35px 0 75px}.card-sigil svg{width:108px;height:155px}.card-sigil:before{width:150px;height:150px}.card-sigil:after{width:180px;height:180px}.character-info{padding:29px 12px 15px}.character-info strong{font-size:17px}.character-class{font-size:7px;letter-spacing:.1em}.character-title{font-size:10px;margin-top:5px;padding-right:8px}.character-count{top:12px;left:12px;font-size:8px}.character-arrow{right:10px;bottom:16px;font-size:15px}.timeline:before{left:18px}.timeline-row{grid-template-columns:45px 1fr;gap:8px}.timeline-index{padding-top:20px;font-size:14px}.timeline-index span{height:34px;width:34px}.timeline-card{padding:20px 15px}.timeline-card h2{font-size:22px}.timeline-head{align-items:start;flex-direction:column;gap:8px}.timeline-card p{font-size:11px}.timeline-tags span{font-size:9px}.wish-full{padding:34px 20px}.wish-full blockquote{font-size:17px}.codex-grid{grid-template-columns:1fr}.codex-card{min-height:185px}.filters{gap:6px}.filter-button{font-size:10px;padding:8px 10px}.ledger-intro{padding:20px;gap:20px}.ledger-intro h3{font-size:22px}.stat-trio>div{padding:3px 8px}.stat-trio small{font-size:8px}.stat-trio strong{font-size:26px}.roll-form,.ledger-records{padding:20px}.records-top{display:block}.records-actions{margin-top:5px}.site-footer{flex-direction:column;text-align:center;gap:18px}.profile-hero{height:280px;padding:24px}.profile-name{bottom:25px;left:22px}.profile-name h2{font-size:36px}.profile-glyph{right:0;opacity:.6}.profile-body{padding:22px}.profile-metadata strong{font-size:10px}.profile-intro{font-size:17px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* THE LIBERATORS: character art and anonymous fourth companion */
+.character-card .card-sigil{inset:16px 0 65px}
+.card-sigil .character-portrait{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(1) brightness(.54);opacity:.94;transition:filter .4s,transform .4s,opacity .4s}
+.character-card:hover .character-portrait,.character-card:focus-visible .character-portrait{filter:grayscale(0) brightness(1);transform:scale(1.045)}
+.character-card.is-sealed .character-portrait,.character-card.is-sealed:hover .character-portrait,.character-card.is-sealed:focus-visible .character-portrait{filter:none;opacity:1}
+.character-card.is-sealed{background:radial-gradient(circle at 50% 25%,#242339,#10141c 73%)}
+.character-card.is-sealed:after{content:"";pointer-events:none;position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,10,19,.14) 0%,rgba(6,8,14,.05) 45%,transparent 65%)}
+.profile-glyph img{object-fit:contain;object-position:center bottom}
+.profile-hero.ash .profile-glyph img{filter:brightness(.65)}
+.home-company{margin:34px 0 46px}
+.home-company-label{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:0 2px 14px;font:600 11px var(--font-title);letter-spacing:.19em;color:var(--gold)}
+.home-company-label span{font:500 9px var(--font-ui);letter-spacing:.16em;color:#858d9a}
+.home-company-lineup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-top:14px}
+.home-figure{min-width:0;height:335px;position:relative;overflow:hidden;border:1px solid rgba(195,166,125,.2);background:radial-gradient(circle at 50% 25%,#303342,#101621 73%);display:flex;align-items:center;flex-direction:column;justify-content:flex-end;padding:16px 8px 15px;transition:border-color .2s,transform .2s}
+.home-figure:hover,.home-figure:focus-visible{transform:translateY(-4px);border-color:rgba(216,183,128,.7)}
+.home-figure img{position:absolute;inset:0;width:100%;height:91%;object-fit:contain;object-position:center bottom;filter:grayscale(1) brightness(.5);transition:filter .35s,transform .35s}
+.home-figure:hover img,.home-figure:focus-visible img{filter:grayscale(0) brightness(.95);transform:scale(1.025)}
+.home-figure:after{content:"";pointer-events:none;position:absolute;inset:42% 0 0;background:linear-gradient(0deg,#0b1019 0%,rgba(11,16,25,.8) 22%,transparent)}
+.home-figure strong,.home-figure small{position:relative;z-index:2;text-align:center}
+.home-figure strong{font:500 19px var(--font-title);letter-spacing:.035em;color:#e9dfcc}
+.home-figure small{font:600 9px var(--font-ui);letter-spacing:.14em;color:#a39a95;margin-top:6px}
+.home-figure.shadowed{background:radial-gradient(ellipse at 50% 27%,#332848,#0d121d 73%)}
+.home-figure.shadowed img,.home-figure.shadowed:hover img,.home-figure.shadowed:focus-visible img{filter:none;opacity:.93}
+.home-figure.shadowed strong{letter-spacing:.28em}
+@media(max-width:900px){.home-figure{height:270px}.home-figure strong{font-size:16px}.home-company-label span{font-size:8px}}
+@media(max-width:630px){.home-company-lineup{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.home-figure{height:280px}.home-company-label{display:block;line-height:1.8}.home-company-label span{display:block;font-size:8px}.home-company{margin:24px 0 36px}}
+
 </style>
 </head>
 <body>
@@ -50,11 +78,20 @@
           </div>
           <div class="hero-bottom"><div><small>PREMIERES</small><strong>12.03.26</strong></div><div class="hero-bottom-middle"><small>THE LAST KNOWN MOMENT</small><strong>ONE WISH</strong></div><div><small>STATUS</small><strong>THE RETURN</strong></div></div>
         </div>
+        <section class="home-company" aria-label="The Liberators character portraits">
+          <div class="home-company-label">THE COMPANY <span>THREE LEGENDS. ONE UNNAMED ALLY.</span></div>
+          <div class="home-company-lineup">
+            <a href="#party" class="home-figure"><img src="assets/characters/artemis.webp" loading="lazy" alt="Artemis, hooded rogue"/><strong>ARTEMIS</strong><small>THE MASTER THIEF</small></a>
+            <a href="#party" class="home-figure"><img src="assets/characters/travok.webp" loading="lazy" alt="Travok, dwarf warrior king"/><strong>TRAVOK</strong><small>THE DWARVEN KING</small></a>
+            <a href="#party" class="home-figure"><img src="assets/characters/fedwig.webp" loading="lazy" alt="Fedwig, gnome wizard"/><strong>FEDWIG</strong><small>THE IMPOSSIBLE MIND</small></a>
+            <a href="#party" class="home-figure shadowed"><img src="assets/characters/unknown-cleric.webp" loading="lazy" alt="The anonymous fourth figure, an Eladrin cleric concealed in shadow"/><strong>???</strong><small>ELADRIN CLERIC</small></a>
+          </div>
+        </section>
         <div class="section-header home-intro"><div><p class="eyebrow compact">THE CHRONICLE RESUMES</p><h2>A legend doesn't end.<br><span>It waits.</span></h2></div><p class="section-lead">They conquered Undermountain. They faced a catastrophe that threatened Waterdeep. At the edge of disaster, Artemis spoke a wish that changed everything. What happens next is still a mystery.</p></div>
         <div class="home-panels"><article class="feature-panel wish-panel"><span class="panel-number">01 / THE LAST WORDS</span><span class="decor-quote">“</span><blockquote id="home-wish"></blockquote><span class="attribution">— ARTEMIS · THE WISH</span></article><article class="feature-panel event-panel"><span class="panel-number">02 / THE NEXT CHAPTER</span><div class="event-inner"><div class="event-roman">III</div><div><h3>LIBERATION DAY</h3><p>A new chapter begins. The rest is unwritten.</p></div><div class="date-box"><small>DECEMBER</small><strong>03</strong><span>2026</span></div></div><a class="text-link" href="#chronicle">Explore what came before <span>↗</span></a></article></div>
         <div class="home-endnote"><span class="ornament">✦</span><span>A CHRONICLE FOR THOSE WHO WERE THERE — AND THOSE WHO DARE TO FOLLOW.</span><span class="ornament">✦</span></div>
       </section>
-      <section class="page" data-page="party" aria-labelledby="party-heading"><div class="page-banner"><p class="eyebrow compact">THE HEROES RETURN</p><h1 id="party-heading">The <em>Company</em></h1><p>Three legends. One unwritten place at the table. Select a dossier to revisit the story.</p></div><div id="character-grid" class="character-grid"></div><p class="editor-note">Portraits are intentionally represented by engraved sigils until approved character artwork is supplied. The fourth character remains sealed to protect the story.</p></section>
+      <section class="page" data-page="party" aria-labelledby="party-heading"><div class="page-banner"><p class="eyebrow compact">THE HEROES RETURN</p><h1 id="party-heading">The <em>Company</em></h1><p>Three legends. One unnamed companion. Select a dossier to revisit their stories.</p></div><div id="character-grid" class="character-grid"></div><p class="editor-note">The three returning legends stand revealed. A fourth presence remains in shadow. Its name will appear when the story allows.</p></section>
       <section class="page" data-page="chronicle" aria-labelledby="chronicle-heading"><div class="page-banner"><p class="eyebrow compact">THE ROAD HERE</p><h1 id="chronicle-heading">The <em>Chronicle</em></h1><p>The past is written. The future is not.</p></div><div id="chronicle-list" class="timeline"></div><div class="wish-full"><p class="eyebrow compact">THE WORDS THAT CHANGED EVERYTHING</p><blockquote id="chronicle-wish"></blockquote><span>ARTEMIS · WISH SPELL</span></div><div class="section-header session-header"><div><p class="eyebrow compact">AFTER EACH SESSION</p><h2>Adventure <span>Journal</span></h2></div><p class="section-lead">Player-approved recaps will be added as the new campaign unfolds. No fictional sessions or unconfirmed outcomes are published.</p></div><div id="session-list" class="session-list"></div></section>
       <section class="page" data-page="codex" aria-labelledby="codex-heading"><div class="page-banner"><p class="eyebrow compact">KNOWN PLACES · PEOPLE · RELICS</p><h1 id="codex-heading">World <em>Codex</em></h1><p>The known world, catalogued without revealing what lies beyond the last wish.</p></div><div id="codex-filters" class="filters"></div><div id="codex-grid" class="codex-grid"></div></section>
       <section class="page" data-page="dice" aria-labelledby="dice-heading"><div class="page-banner"><p class="eyebrow compact">THE FATE OF THE DICE</p><h1 id="dice-heading">Dice <em>Ledger</em></h1><p>A personal, browser-based record of the rolls that shaped the tale.</p></div><div class="ledger-intro"><div><span class="status-pill"><span class="tag-dot"></span> LOCAL RECORD</span><h3>Every roll leaves a mark.</h3><p>No official rolls have been imported. Add your own records, then export them to preserve them. Nothing is automatically synced to TableOS or GitHub.</p></div><div class="stat-trio"><div><small>TOTAL ROLLS</small><strong id="roll-total">0</strong></div><div><small>NATURAL 20s</small><strong id="roll-twenties">0</strong></div><div><small>NATURAL 1s</small><strong id="roll-ones">0</strong></div></div></div><div class="ledger-layout"><form id="roll-form" class="roll-form"><h3>Record a roll</h3><label for="roll-character">Character</label><select id="roll-character" required></select><label for="roll-kind">Roll type</label><select id="roll-kind"><option>Attack</option><option>Ability check</option><option>Saving throw</option><option>Initiative</option><option>Other</option></select><div class="form-split"><div><label for="roll-die">Die</label><select id="roll-die"><option>d20</option><option>d12</option><option>d10</option><option>d8</option><option>d6</option><option>d4</option><option>d100</option></select></div><div><label for="roll-value">Natural result</label><input id="roll-value" type="number" min="1" max="20" value="20" required/></div></div><label for="roll-note">Moment (optional)</label><textarea id="roll-note" rows="3" maxlength="240" placeholder="What happened at the table?"></textarea><button class="button button-gold full-width" type="submit">Add to Chronicle <span>+</span></button></form><div class="ledger-records"><div class="records-top"><h3>Recent rolls</h3><div class="records-actions"><button id="export-rolls" class="small-button" type="button">Export JSON</button><label class="small-button" for="import-rolls">Import JSON</label><input id="import-rolls" type="file" accept=".json,application/json" hidden/></div></div><div id="roll-list" class="roll-list"></div><p class="fineprint">Records are saved only in this browser. Export regularly. Do not enter private character information on shared devices.</p></div></div></section>
@@ -78,29 +115,29 @@ window.LIBERATORS_DATA = {
       id: 'artemis', number:'01', name:'Artemis', title:'The Master Thief', role:'Rogue', lineage:'Human', level:20, accent:'violet', sigil:'diamond',
       intro:'A calculated risk. A flawless diamond toothpick. A wish that changed everything.',
       story:'Artemis is cunning, controlled, and capable of astonishing feats of theft. Faced with Halaster Blackcloak and the encroaching tarrasques, he made the wish that ended the previous chapter.',
-      details:[{label:'Signature',value:'Transparent diamond toothpick'},{label:'Last known act',value:'The Wish'},{label:'Character art',value:'Awaiting approved portrait'}],
-      portrait:null
+      details:[{label:'Signature',value:'Transparent diamond toothpick'},{label:'Last known act',value:'The Wish'},{label:'Portrait',value:'Cinematic character illustration'}],
+      portrait:'assets/characters/artemis.webp'
     },
     {
       id: 'travok', number:'02', name:'Travok', title:'The Dwarven King', role:'Warrior', lineage:'Dwarf', level:20, accent:'gold', sigil:'axe',
       intro:'Pride, stubborn courage, and a golden axe bearing the face of a beholder.',
       story:'Travok is a fiercely proud, gold-loving dwarven warrior who considers himself royalty. His signature golden beholder axe is inseparable from his legend.',
-      details:[{label:'Signature',value:'Golden beholder axe'},{label:'Character',value:'Proud, stubborn, treasure-loving'},{label:'Character art',value:'Awaiting approved portrait'}],
-      portrait:null
+      details:[{label:'Signature',value:'Golden beholder axe'},{label:'Character',value:'Proud, stubborn, treasure-loving'},{label:'Portrait',value:'Cinematic character illustration'}],
+      portrait:'assets/characters/travok.webp'
     },
     {
       id: 'fedwig', number:'03', name:'Fedwig', title:'The Impossible Mind', role:'Wizard', lineage:'Gnome', level:20, accent:'blue', sigil:'star',
       intro:'An extraordinary intellect with questionable instincts for self-preservation.',
       story:'Fedwig is an eccentric, brilliant gnome wizard. Recognizable by his feathered fedora and purple glasses, he approaches impossible problems with invention, curiosity, and occasional calamity.',
-      details:[{label:'Signature',value:'Feathered fedora and purple glasses'},{label:'Disposition',value:'Brilliant, eccentric inventor'},{label:'Character art',value:'Awaiting approved portrait'}],
-      portrait:null
+      details:[{label:'Signature',value:'Feathered fedora and purple glasses'},{label:'Disposition',value:'Brilliant, eccentric inventor'},{label:'Portrait',value:'Cinematic character illustration'}],
+      portrait:'assets/characters/fedwig.webp'
     },
     {
-      id: 'unknown', number:'04', name:'The Fourth Seat', title:'An Unwritten Chapter', role:'Unrevealed', lineage:'Unrevealed', level:null, accent:'ash', sigil:'moon',
-      intro:'Every return changes the company.',
-      story:'The identity and role of the fourth companion will be revealed in the new chapter. This card is intentionally sealed to avoid campaign spoilers.',
-      details:[{label:'Identity',value:'Sealed until revealed in play'}],
-      portrait:null,
+      id: 'unknown', number:'04', name:'???', title:'The Fourth Seat', role:'Cleric', lineage:'Eladrin', level:null, accent:'ash', sigil:'moon',
+      intro:'A fourth presence follows the legendary company. A face hidden from the light. A name yet to be spoken.',
+      story:'A shadowed Eladrin cleric joins the company for Chapter III. Their name, past, and purpose remain an unopened chapter.',
+      details:[{label:'Identity',value:'Undisclosed'},{label:'Calling',value:'Cleric'},{label:'Ancestry',value:'Eladrin'}],
+      portrait:'assets/characters/unknown-cleric.webp',
       locked:true
     }
   ],
@@ -153,17 +190,17 @@ window.LIBERATORS_DATA = {
     $('#menu-toggle').addEventListener('click',()=>{const open=nav.classList.toggle('open');$('#menu-toggle').setAttribute('aria-expanded',String(open));});
   }
   function characterCard(c){
-    const art=c.portrait ? `<img class="character-portrait" src="${escapeHtml(c.portrait)}" alt="Approved portrait of ${escapeHtml(c.name)}" loading="lazy"/>`:glyphs[c.sigil];
+    const art=c.portrait ? `<img class="character-portrait" src="${escapeHtml(c.portrait)}" alt="${c.locked?'A nameless figure concealed in shadow':('Illustrated portrait of '+escapeHtml(c.name))}" loading="lazy"/>`:glyphs[c.sigil];
     return `<button class="character-card ${c.accent} ${c.locked?'is-sealed':''}" data-character="${escapeHtml(c.id)}" type="button" aria-label="Open ${escapeHtml(c.name)} dossier">
     <span class="character-count">${c.number} / ${c.locked?'SEALED':'LEVEL 20'}</span><div class="card-sigil" aria-hidden="true">${art}</div>
-    <span class="character-info"><span class="character-class">${escapeHtml(c.role)}${c.locked?'':' · '+escapeHtml(c.lineage)}</span><strong>${escapeHtml(c.name)}</strong><span class="character-title">${escapeHtml(c.title)}</span></span>
+    <span class="character-info"><span class="character-class">${escapeHtml(c.role)} · ${escapeHtml(c.lineage)}</span><strong>${escapeHtml(c.name)}</strong><span class="character-title">${escapeHtml(c.title)}</span></span>
     <span class="character-arrow">↗</span></button>`;
   }
   function showProfile(id){
     const c=data.characters.find(c=>c.id===id);if(!c)return;
     const panel=$('#profile-detail');
     panel.innerHTML=`<div class="profile-hero ${c.accent}"><span class="eyebrow compact">THE LIBERATORS / DOSSIER ${c.number}</span><div class="profile-glyph" aria-hidden="true">${c.portrait?`<img src="${escapeHtml(c.portrait)}" alt=""/>`:glyphs[c.sigil]}</div><div class="profile-name"><h2>${escapeHtml(c.name)}</h2><span>${escapeHtml(c.title)}</span></div></div>
-    <div class="profile-body"><p class="profile-intro">${escapeHtml(c.intro)}</p><div class="profile-metadata"><div><small>ROLE</small><strong>${escapeHtml(c.role)}</strong></div><div><small>LINEAGE</small><strong>${escapeHtml(c.lineage)}</strong></div><div><small>LEVEL</small><strong>${c.level??'SEALED'}</strong></div></div><h3>${c.locked?'A Hidden Chapter':'The Story So Far'}</h3><p>${escapeHtml(c.story)}</p><div class="profile-details">${c.details.map(d=>`<div><small>${escapeHtml(d.label)}</small><span>${escapeHtml(d.value)}</span></div>`).join('')}</div><p class="profile-coda">${c.locked?'IDENTITY UNREVEALED · PLAYER-SAFE DOSSIER':'PORTRAIT PLACEHOLDER · UPDATES AFTER PLAY'}</p></div>`;
+    <div class="profile-body"><p class="profile-intro">${escapeHtml(c.intro)}</p><div class="profile-metadata"><div><small>ROLE</small><strong>${escapeHtml(c.role)}</strong></div><div><small>LINEAGE</small><strong>${escapeHtml(c.lineage)}</strong></div><div><small>LEVEL</small><strong>${c.level??'SEALED'}</strong></div></div><h3>${c.locked?'A Hidden Chapter':'The Story So Far'}</h3><p>${escapeHtml(c.story)}</p><div class="profile-details">${c.details.map(d=>`<div><small>${escapeHtml(d.label)}</small><span>${escapeHtml(d.value)}</span></div>`).join('')}</div><p class="profile-coda">${c.locked?'IDENTITY UNREVEALED · PLAYER-SAFE DOSSIER':'CHARACTER PORTRAIT · MORE CHRONICLES AWAIT'}</p></div>`;
     const dialog=$('#profile-dialog');if(!dialog.open)dialog.showModal();
   }
   function setupParty(){
