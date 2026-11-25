@@ -171,6 +171,20 @@
  .lib-stage-lineup{scroll-behavior:auto}
 }
 
+
+/* Green Iguanas-style direct CSS hover fallback, plus a brighter active portrait */
+@media (hover:hover) and (pointer:fine) {
+  .lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible) {z-index:1;transform:translateY(7px)}
+  .lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible)>img {filter:grayscale(1) brightness(.31) contrast(1.08) drop-shadow(0 18px 18px #000b);opacity:.61;transform:translateX(-50%) scale(.95)}
+  .lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible) .lib-figure-nameplate strong {color:#898990;text-shadow:0 2px 12px #000}
+  .lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible) .lib-figure-nameplate small {color:#858189}
+  .lib-stage-lineup .lib-stage-figure:hover,.lib-stage-lineup .lib-stage-figure:focus-visible {z-index:12;transform:translateY(-16px)}
+  .lib-stage-lineup .lib-stage-figure:hover>img,.lib-stage-lineup .lib-stage-figure:focus-visible>img {filter:grayscale(0) saturate(1.17) brightness(1.24) contrast(1.12) drop-shadow(0 18px 34px rgba(222,160,91,.36)) drop-shadow(0 25px 36px #000c);opacity:1;transform:translateX(-50%) scale(1.10)}
+  .lib-stage-lineup .lib-stage-figure--secret:hover>img,.lib-stage-lineup .lib-stage-figure--secret:focus-visible>img {filter:brightness(1.05) contrast(1.1) drop-shadow(0 22px 34px #000d)}
+  .lib-stage-lineup .lib-stage-figure:hover .lib-figure-halo,.lib-stage-lineup .lib-stage-figure:focus-visible .lib-figure-halo {opacity:.45}
+  .lib-stage-lineup .lib-stage-figure:hover .lib-figure-nameplate strong,.lib-stage-lineup .lib-stage-figure:focus-visible .lib-figure-nameplate strong {color:#ffeac4;text-shadow:0 0 22px rgba(230,172,109,.48),0 3px 20px #000}
+  .lib-stage-lineup .lib-stage-figure:hover .lib-figure-nameplate i,.lib-stage-lineup .lib-stage-figure:focus-visible .lib-figure-nameplate i {width:75px;background:#ffe0a5;box-shadow:0 0 15px rgba(232,171,99,.64)}
+}
 </style>
 </head>
 <body>
@@ -425,6 +439,7 @@ window.LIBERATORS_DATA = {
     }
     figures.forEach(button=>{
       button.addEventListener('pointerenter',()=>activate(button));
+      button.addEventListener('mouseenter',()=>activate(button));
       button.addEventListener('focus',()=>activate(button));
       button.addEventListener('click',()=>showProfile(button.dataset.stageCharacter));
     });
