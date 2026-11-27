@@ -185,20 +185,70 @@
   .lib-stage-lineup .lib-stage-figure:hover .lib-figure-nameplate strong,.lib-stage-lineup .lib-stage-figure:focus-visible .lib-figure-nameplate strong {color:#ffeac4;text-shadow:0 0 22px rgba(230,172,109,.48),0 3px 20px #000}
   .lib-stage-lineup .lib-stage-figure:hover .lib-figure-nameplate i,.lib-stage-lineup .lib-stage-figure:focus-visible .lib-figure-nameplate i {width:75px;background:#ffe0a5;box-shadow:0 0 15px rgba(232,171,99,.64)}
 }
+
+/* Knowledge Vault UI pass: hierarchy, accessible controls, restrained motion. */
+:root{--muted:#b8bec8;--dim:#a5adba;--ui-ease:cubic-bezier(.2,.7,.3,1);--ui-fast:180ms;--ui-normal:220ms}
+body{line-height:1.65;font-weight:400}
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:2px solid #f3ce91!important;outline-offset:4px}
+.skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:12px 18px;background:#f3ce91;color:#101722;transform:translateY(-160%);font-weight:700}
+.skip-link:focus{transform:none}
+.site-nav a{font-size:13px;letter-spacing:0;transition:color var(--ui-fast) var(--ui-ease)}
+.brand small,.header-tag{font-size:10px}
+.section-header{gap:28px;margin-top:64px;margin-bottom:24px}
+.section-header h2,.page-banner h1,.timeline-card h2,.codex-card h3{line-height:1.16}
+.section-lead,.page-banner p:last-child,.timeline-card p,.codex-card p,.session-card p,.profile-body p,.ledger-intro p{font-size:15px;line-height:1.7;color:#c4c8d0;text-align:left;font-weight:400}
+.codex-card p{max-width:64ch}
+.feature-panel,.timeline-card,.codex-card,.roll-form,.ledger-records{box-shadow:0 2px 5px #0002,0 8px 22px #0002}
+.profile-dialog{box-shadow:0 6px 24px #0006,0 24px 64px #0008}
+.button,.small-button,.filter-button{min-height:44px;font-size:13px;line-height:1.35;letter-spacing:0;white-space:normal;transition:background var(--ui-fast) var(--ui-ease),border-color var(--ui-fast) var(--ui-ease),color var(--ui-fast) var(--ui-ease)}
+.button:hover{transform:none}
+.button-gold{color:#111722}
+.filter-button{padding:10px 16px}
+.records-actions{flex-wrap:wrap}
+.small-button{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px}
+.roll-form label{font-size:13px;letter-spacing:0;text-transform:none;color:#d2d2d6}
+.roll-form input,.roll-form select,.roll-form textarea{font-size:16px;min-height:44px}
+.stat-trio strong,.roll-badge strong,.date-box strong{font-variant-numeric:tabular-nums}
+.dialog-close,.remove-roll{min-width:44px;min-height:44px}
+.site-footer p,.fineprint,.editor-note{color:#aeb7c3;font-size:13px;line-height:1.6}
+.lib-stage-bottom>a{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 14px;border:1px solid #d8b78080;background:#d8b78015;font-size:12px;letter-spacing:.03em;white-space:normal;text-align:center}
+.lib-stage-bottom>a>span:last-child{display:inline}
+.lib-stage-bottom>a:hover{background:#d8b780;color:#101722;text-decoration:none}
+.lib-figure-nameplate strong,.lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible) .lib-figure-nameplate strong{color:#f0e5d5}
+.lib-figure-nameplate small,.lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible) .lib-figure-nameplate small{color:#c0b7b2}
+.page.is-active{animation:emerge var(--ui-normal) var(--ui-ease)}
+@media(max-width:700px){
+ .section-header{gap:14px;margin-top:40px;margin-bottom:20px}
+ .section-lead,.page-banner p:last-child,.timeline-card p,.codex-card p{font-size:15px}
+ .lib-mobile-tabs a{font-size:11px;min-height:48px}
+ .lib-stage-bottom{min-height:88px;gap:2px}
+ .lib-stage-lineup-outer{bottom:88px}
+ .lib-stage-bottom>a{min-height:44px;padding:6px 12px}
+ .site-footer p{text-align:left}
+ .records-actions{gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .button:hover,.character-card:hover,.character-card:focus-visible{transform:none}
+ .lib-stage-figure,.lib-stage-figure.is-active,.lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible),.lib-stage-lineup .lib-stage-figure:hover,.lib-stage-lineup .lib-stage-figure:focus-visible{transform:none}
+ .lib-stage-figure>img,.lib-stage-figure.is-active>img,.lib-stage-lineup .lib-stage-figure:hover>img,.lib-stage-lineup .lib-stage-figure:focus-visible>img,.lib-stage-lineup:hover .lib-stage-figure:not(:hover):not(:focus-visible)>img{transform:translateX(-50%)}
+}
+
 </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="starfield" aria-hidden="true"></div>
   <div id="app">
     <header class="site-header shell">
       <a class="brand" href="#home" aria-label="The Liberators home"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjJkMzljIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTY4MzUzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTgwIDcgMTQ3IDgwIDgwIDE1MyAxMyA4MFoiIGZpbGw9IiMxMTE2MjAiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0ibTgwIDIwIDU0IDYwLTU0IDYwLTU0LTYwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzdhNDZiIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTgwIDMzdjc4TTU0IDc2bDI2LTMwIDI2IDMwTTU1IDk3bDI1IDI0IDI1LTI0IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iODAiIGN5PSI3NiIgcj0iOCIgZmlsbD0iI2Q5YjU3ZCIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iNzYiIHI9IjMiIGZpbGw9IiMxNjFjMjgiLz48L3N2Zz4K" alt=""/><span><strong>THE LIBERATORS</strong><small>THE LIVING CHRONICLE</small></span></a>
-      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">☰</button>
       <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#home" data-section="home" class="active">The Return</a>
-        <a href="#party" data-section="party">The Company</a>
+        <a href="#home" data-section="home" class="active">The return</a>
+        <a href="#party" data-section="party">The company</a>
         <a href="#chronicle" data-section="chronicle">Chronicle</a>
-        <a href="#codex" data-section="codex">World Codex</a>
-        <a href="#dice" data-section="dice">Dice Ledger</a>
+        <a href="#codex" data-section="codex">World codex</a>
+        <a href="#dice" data-section="dice">Dice ledger</a>
       </nav>
       <div class="header-tag"><span class="tag-dot"></span> CHAPTER III</div>
     </header>
@@ -209,7 +259,7 @@
       <a href="#codex" data-section="codex"><span aria-hidden="true">◇</span>Codex</a>
       <a href="#dice" data-section="dice"><span aria-hidden="true">⚄</span>Dice</a>
     </nav>
-    <main id="main-content" class="shell">
+    <main id="main-content" class="shell" tabindex="-1">
       <section class="page page-home is-active" data-page="home" aria-labelledby="hero-heading">
         <section class="lib-stage" aria-label="The Liberators: Chapter III cinematic introduction">
           <div class="lib-stage-backdrop" aria-hidden="true"><img src="assets/hero/liberators-tower-siege.webp" alt="" fetchpriority="high" decoding="async"/></div>
@@ -247,7 +297,7 @@
           </div>
           <div class="lib-stage-bottom">
             <span>DECEMBER 03, 2026 <b>·</b> LIBERATION DAY</span>
-            <a href="#chronicle" aria-label="Discover the Liberators story">DISCOVER THE CHRONICLE <span aria-hidden="true">↗</span></a>
+            <a href="#chronicle" aria-label="Discover the Liberators story">Read the chronicle <span aria-hidden="true">↗</span></a>
             <span>THREE LEGENDS. ONE UNNAMED ALLY.</span>
           </div>
         </section>
@@ -258,12 +308,12 @@
       </section>
       <section class="page" data-page="party" aria-labelledby="party-heading"><div class="page-banner"><p class="eyebrow compact">THE HEROES RETURN</p><h1 id="party-heading">The <em>Company</em></h1><p>Three legends. One unnamed companion. Select a dossier to revisit their stories.</p></div><div id="character-grid" class="character-grid"></div><p class="editor-note">The three returning legends stand revealed. A fourth presence remains in shadow. Its name will appear when the story allows.</p></section>
       <section class="page" data-page="chronicle" aria-labelledby="chronicle-heading"><div class="page-banner"><p class="eyebrow compact">THE ROAD HERE</p><h1 id="chronicle-heading">The <em>Chronicle</em></h1><p>The past is written. The future is not.</p></div><div id="chronicle-list" class="timeline"></div><div class="wish-full"><p class="eyebrow compact">THE WORDS THAT CHANGED EVERYTHING</p><blockquote id="chronicle-wish"></blockquote><span>ARTEMIS · WISH SPELL</span></div><div class="section-header session-header"><div><p class="eyebrow compact">AFTER EACH SESSION</p><h2>Adventure <span>Journal</span></h2></div><p class="section-lead">Player-approved recaps will be added as the new campaign unfolds. No fictional sessions or unconfirmed outcomes are published.</p></div><div id="session-list" class="session-list"></div></section>
-      <section class="page" data-page="codex" aria-labelledby="codex-heading"><div class="page-banner"><p class="eyebrow compact">KNOWN PLACES · PEOPLE · RELICS</p><h1 id="codex-heading">World <em>Codex</em></h1><p>The known world, catalogued without revealing what lies beyond the last wish.</p></div><div id="codex-filters" class="filters"></div><div id="codex-grid" class="codex-grid"></div></section>
-      <section class="page" data-page="dice" aria-labelledby="dice-heading"><div class="page-banner"><p class="eyebrow compact">THE FATE OF THE DICE</p><h1 id="dice-heading">Dice <em>Ledger</em></h1><p>A personal, browser-based record of the rolls that shaped the tale.</p></div><div class="ledger-intro"><div><span class="status-pill"><span class="tag-dot"></span> LOCAL RECORD</span><h3>Every roll leaves a mark.</h3><p>No official rolls have been imported. Add your own records, then export them to preserve them. Nothing is automatically synced to TableOS or GitHub.</p></div><div class="stat-trio"><div><small>TOTAL ROLLS</small><strong id="roll-total">0</strong></div><div><small>NATURAL 20s</small><strong id="roll-twenties">0</strong></div><div><small>NATURAL 1s</small><strong id="roll-ones">0</strong></div></div></div><div class="ledger-layout"><form id="roll-form" class="roll-form"><h3>Record a roll</h3><label for="roll-character">Character</label><select id="roll-character" required></select><label for="roll-kind">Roll type</label><select id="roll-kind"><option>Attack</option><option>Ability check</option><option>Saving throw</option><option>Initiative</option><option>Other</option></select><div class="form-split"><div><label for="roll-die">Die</label><select id="roll-die"><option>d20</option><option>d12</option><option>d10</option><option>d8</option><option>d6</option><option>d4</option><option>d100</option></select></div><div><label for="roll-value">Natural result</label><input id="roll-value" type="number" min="1" max="20" value="20" required/></div></div><label for="roll-note">Moment (optional)</label><textarea id="roll-note" rows="3" maxlength="240" placeholder="What happened at the table?"></textarea><button class="button button-gold full-width" type="submit">Add to Chronicle <span>+</span></button></form><div class="ledger-records"><div class="records-top"><h3>Recent rolls</h3><div class="records-actions"><button id="export-rolls" class="small-button" type="button">Export JSON</button><label class="small-button" for="import-rolls">Import JSON</label><input id="import-rolls" type="file" accept=".json,application/json" hidden/></div></div><div id="roll-list" class="roll-list"></div><p class="fineprint">Records are saved only in this browser. Export regularly. Do not enter private character information on shared devices.</p></div></div></section>
+      <section class="page" data-page="codex" aria-labelledby="codex-heading"><div class="page-banner"><p class="eyebrow compact">KNOWN PLACES · PEOPLE · RELICS</p><h1 id="codex-heading">World <em>Codex</em></h1><p>The known world, catalogued without revealing what lies beyond the last wish.</p></div><div id="codex-filters" class="filters"></div><div id="codex-grid" class="codex-grid" aria-live="polite"></div></section>
+      <section class="page" data-page="dice" aria-labelledby="dice-heading"><div class="page-banner"><p class="eyebrow compact">THE FATE OF THE DICE</p><h1 id="dice-heading">Dice <em>Ledger</em></h1><p>A personal, browser-based record of the rolls that shaped the tale.</p></div><div class="ledger-intro"><div><span class="status-pill"><span class="tag-dot"></span> LOCAL RECORD</span><h3>Every roll leaves a mark.</h3><p>No official rolls have been imported. Add your own records, then export them to preserve them. Nothing is automatically synced to Roll20 or GitHub.</p></div><div class="stat-trio"><div><small>TOTAL ROLLS</small><strong id="roll-total">0</strong></div><div><small>NATURAL 20s</small><strong id="roll-twenties">0</strong></div><div><small>NATURAL 1s</small><strong id="roll-ones">0</strong></div></div></div><div class="ledger-layout"><form id="roll-form" class="roll-form"><h3>Record a roll</h3><label for="roll-character">Character</label><select id="roll-character" required></select><label for="roll-kind">Roll type</label><select id="roll-kind"><option>Attack</option><option>Ability check</option><option>Saving throw</option><option>Initiative</option><option>Other</option></select><div class="form-split"><div><label for="roll-die">Die</label><select id="roll-die"><option>d20</option><option>d12</option><option>d10</option><option>d8</option><option>d6</option><option>d4</option><option>d100</option></select></div><div><label for="roll-value">Natural result</label><input id="roll-value" type="number" min="1" max="20" value="20" required/></div></div><label for="roll-note">Moment (optional)</label><textarea id="roll-note" rows="3" maxlength="240" placeholder="What happened at the table?"></textarea><button class="button button-gold full-width" type="submit">Record roll <span aria-hidden="true">+</span></button></form><div class="ledger-records"><div class="records-top"><h3>Recent rolls</h3><div class="records-actions"><button id="export-rolls" class="small-button" type="button">Export JSON</button><button id="import-trigger" class="small-button" type="button">Import JSON</button><input id="import-rolls" type="file" accept=".json,application/json" hidden/></div></div><div id="roll-list" class="roll-list" aria-live="polite"></div><p class="fineprint">Records are saved only in this browser. Export regularly. Do not enter private character information on shared devices.</p></div></div></section>
     </main>
     <footer class="site-footer shell"><div class="footer-brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjJkMzljIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTY4MzUzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTgwIDcgMTQ3IDgwIDgwIDE1MyAxMyA4MFoiIGZpbGw9IiMxMTE2MjAiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0ibTgwIDIwIDU0IDYwLTU0IDYwLTU0LTYwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzdhNDZiIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTgwIDMzdjc4TTU0IDc2bDI2LTMwIDI2IDMwTTU1IDk3bDI1IDI0IDI1LTI0IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iODAiIGN5PSI3NiIgcj0iOCIgZmlsbD0iI2Q5YjU3ZCIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iNzYiIHI9IjMiIGZpbGw9IiMxNjFjMjgiLz48L3N2Zz4K" alt=""/><div><strong>THE LIBERATORS</strong><span>THE LIVING CHRONICLE · CHAPTER III</span></div></div><p>A player-facing archive of an ongoing tabletop adventure.<br/>Unofficial fan project. Not affiliated with Wizards of the Coast.</p><a href="#home" class="back-to-top">Return to top ↑</a></footer>
   </div>
-  <dialog id="profile-dialog" class="profile-dialog"><button id="dialog-close" aria-label="Close character profile" class="dialog-close">✕</button><div id="profile-detail"></div></dialog>
+  <dialog id="profile-dialog" class="profile-dialog" aria-label="Character dossier"><button id="dialog-close" aria-label="Close character profile" class="dialog-close" autofocus>✕</button><div id="profile-detail"></div></dialog>
   <script>/* PLAYER-SAFE CAMPAIGN DATA. All content here is public when deployed. */
 window.LIBERATORS_DATA = {
   title: 'The Liberators',
@@ -344,6 +394,7 @@ window.LIBERATORS_DATA = {
     const nav=$('#site-nav');
     function go(){
       const fragment=window.location.hash.slice(1);
+      if(fragment==='main-content')return;
       const page=allowed.includes(fragment)?fragment:'home';
       $$('.page').forEach(e=>e.classList.toggle('is-active',e.dataset.page===page));
       $$('[data-section]').forEach(e=>{const active=e.dataset.section===page;e.classList.toggle('active',active);if(active)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current');});
@@ -352,6 +403,7 @@ window.LIBERATORS_DATA = {
       document.title=page==='home'?'The Liberators — Chapter III':`${page[0].toUpperCase()+page.slice(1)} — The Liberators`;
     }
     window.addEventListener('hashchange',go);go();
+    $('.skip-link').addEventListener('click',e=>{e.preventDefault();$('#main-content').focus();$('#main-content').scrollIntoView({block:'start',behavior:'instant'});});
     $('#menu-toggle').addEventListener('click',()=>{const open=nav.classList.toggle('open');$('#menu-toggle').setAttribute('aria-expanded',String(open));});
   }
   function characterCard(c){
@@ -383,9 +435,9 @@ window.LIBERATORS_DATA = {
   function setupCodex(){
     const categories=['All','Places','People','Threats','Relics & Magic'];let active='All';
     function render(){
-      $('#codex-filters').innerHTML=categories.map(c=>`<button type="button" class="filter-button ${active===c?'selected':''}" data-filter="${escapeHtml(c)}">${escapeHtml(c)}</button>`).join('');
+      $('#codex-filters').innerHTML=categories.map(c=>`<button type="button" class="filter-button ${active===c?'selected':''}" data-filter="${escapeHtml(c)}" aria-pressed="${active===c}">${escapeHtml(c)}</button>`).join('');
       $('#codex-grid').innerHTML=data.encyclopedia.filter(e=>active==='All'||e.category===active).map(e=>`<article class="codex-card"><span class="codex-category">${escapeHtml(e.category)}</span><h3>${escapeHtml(e.name)}</h3><p>${escapeHtml(e.desc)}</p><span class="codex-end">✦</span></article>`).join('');
-      $$('#codex-filters button').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter;render();}));
+      $$('#codex-filters button').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter;render();$('#codex-filters button').find(b=>b.dataset.filter===active)?.focus();}));
     }
     render();
   }
@@ -417,6 +469,7 @@ window.LIBERATORS_DATA = {
       const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
       const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='the-liberators-dice-ledger.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
     });
+    $('#import-trigger').addEventListener('click',()=>$('#import-rolls').click());
     $('#import-rolls').addEventListener('change',async e=>{
       const file=e.target.files?.[0];if(!file)return;
       if(file.size>2_000_000){alert('Please select a smaller JSON file.');e.target.value='';return;}
